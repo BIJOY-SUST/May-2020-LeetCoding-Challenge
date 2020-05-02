@@ -91,50 +91,27 @@ auto TimeEnd = chrono::steady_clock::now();
 #undef BIJOY
 /************************Code start here*******************/
 
-class Solution {
-public:
-    int firstBadVersion(int n) {
-        
-        int l=1,r=n;
-        int ok=n;
-        while(l<=r){
-            // int mid = (l+r)/2;
-            int mid = l + (r-l)/2;
-            if(isBadVersion(mid)==true){
-                ok = mid;
-                // break;
-                r=mid-1;
-            }
-            else{
-                l=mid+1;
-            }
-        }
-        return ok;
-        
-    }
-};
 
-
-// void Solve(){
+void Solve(){
 
     
 
 
-//     return;
-// }
+    return;
+}
 
 
-// int32_t main() {
-//     #ifdef BIJOY
-//         TimeStart = chrono::steady_clock::now();
-//     #endif
+int32_t main() {
+    #ifdef BIJOY
+        TimeStart = chrono::steady_clock::now();
+    #endif
 
-//     Solve();
+    Solve();
 
-//     #ifdef BIJOY
-//         TimeEnd = chrono::steady_clock::now();
-//         auto ElapsedTime = TimeEnd - TimeStart;
-//         cout << "\n\nTime elapsed: " << chrono::duration<double>(ElapsedTime).count() << " seconds.\n";
-//     #endif
-//     return 0;
-// }
+    #ifdef BIJOY
+        TimeEnd = chrono::steady_clock::now();
+        auto ElapsedTime = TimeEnd - TimeStart;
+        cout << "\n\nTime elapsed: " << chrono::duration<double>(ElapsedTime).count() << " seconds.\n";
+    #endif
+    return 0;
+}
