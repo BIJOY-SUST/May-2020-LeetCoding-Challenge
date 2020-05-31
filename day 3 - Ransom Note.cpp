@@ -92,27 +92,50 @@ auto TimeEnd = chrono::steady_clock::now();
 /************************Code start here*******************/
 
 
-void Solve(){
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        map<char,int>mp;
+        for(int i=0;i<magazine.size();i++){
+            mp[magazine[i]]++;
+        }
+        for (int i = 0; i < ransomNote.size(); ++i)
+        {
+            if(mp[ransomNote[i]]==0){
+                return false;
+            }
+            else{
+                mp[ransomNote[i]]--;
+            }
+            /* code */
+        }
+        return true;
+        
+    }
+};
+
+
+// void Solve(){
 
 	
 
 
 
-    return;
-}
+//     return;
+// }
 
 
-int32_t main() {
-    #ifdef BIJOY
-        TimeStart = chrono::steady_clock::now();
-    #endif
+// int32_t main() {
+//     #ifdef BIJOY
+//         TimeStart = chrono::steady_clock::now();
+//     #endif
 
-    Solve();
+//     Solve();
 
-    #ifdef BIJOY
-        TimeEnd = chrono::steady_clock::now();
-        auto ElapsedTime = TimeEnd - TimeStart;
-        cout << "\n\nTime elapsed: " << chrono::duration<double>(ElapsedTime).count() << " seconds.\n";
-    #endif
-    return 0;
-}
+//     #ifdef BIJOY
+//         TimeEnd = chrono::steady_clock::now();
+//         auto ElapsedTime = TimeEnd - TimeStart;
+//         cout << "\n\nTime elapsed: " << chrono::duration<double>(ElapsedTime).count() << " seconds.\n";
+//     #endif
+//     return 0;
+// }

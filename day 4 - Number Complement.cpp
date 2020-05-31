@@ -92,27 +92,59 @@ auto TimeEnd = chrono::steady_clock::now();
 /************************Code start here*******************/
 
 
-void Solve(){
+class Solution {
+public:
+    int findComplement(int num) {
+        int n=num;
+    
+        vi v;
+
+        while(n>0){
+            int d = n%2;
+            n = n/2;
+            if(d==0){
+                v.push_back(1);
+            }
+            else v.push_back(0);
+
+
+        }
+
+        // reverse(all(v));
+        // cout<<v.size()<<nl;
+        ll ans=0;
+        for (int i = 0; i < v.size(); ++i)
+        {
+            // cout<<v[i]<<nl;
+            if(v[i]==1) ans+= POW(2,i);
+            /* code */
+        }
+        return ans;
+    }
+};
+
+
+// void Solve(){
 
 	
 
 
 
-    return;
-}
+//     return;
+// }
 
 
-int32_t main() {
-    #ifdef BIJOY
-        TimeStart = chrono::steady_clock::now();
-    #endif
+// int32_t main() {
+//     #ifdef BIJOY
+//         TimeStart = chrono::steady_clock::now();
+//     #endif
 
-    Solve();
+//     Solve();
 
-    #ifdef BIJOY
-        TimeEnd = chrono::steady_clock::now();
-        auto ElapsedTime = TimeEnd - TimeStart;
-        cout << "\n\nTime elapsed: " << chrono::duration<double>(ElapsedTime).count() << " seconds.\n";
-    #endif
-    return 0;
-}
+//     #ifdef BIJOY
+//         TimeEnd = chrono::steady_clock::now();
+//         auto ElapsedTime = TimeEnd - TimeStart;
+//         cout << "\n\nTime elapsed: " << chrono::duration<double>(ElapsedTime).count() << " seconds.\n";
+//     #endif
+//     return 0;
+// }
